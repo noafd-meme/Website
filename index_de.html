@@ -1,0 +1,703 @@
+<html lang="de">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta name="description" content="Eine politisch bewusste Meme-Community für ein offenes, progressives Deutschland"/>
+  <meta name="keywords" content="Memes, Politik, Deutschland, Community, Token"/>
+  <title>
+   NoAfD.meme - Meme Community
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Permanent+Marker&family=Bangers&display=swap" rel="stylesheet"/>
+  <script src="script.js" defer></script>
+  <style>
+   body {
+     font-family: 'Roboto', sans-serif;
+   }
+   .hero-bg {
+     background: linear-gradient(135deg, #009FE3 0%, #000000 100%);
+     position: relative;
+   }
+   .hero-bg::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background: url('path-to-meme-pattern.png') repeat;
+     opacity: 0.1;
+     pointer-events: none;
+   }
+   .section-bg {
+     background: linear-gradient(135deg, #FF0000 0%, #FFFFFF 100%);
+   }
+   .btn-primary {
+     background: linear-gradient(135deg, #009FE3 0%, #000000 100%);
+     transition: all 0.3s ease;
+   }
+   .btn-primary:hover {
+     background: linear-gradient(135deg, #000000 0%, #009FE3 100%);
+   }
+   .btn-red-gradient {
+     background: linear-gradient(135deg, #FF0000 0%, #FF6347 100%);
+   }
+   .btn-red-gradient:hover {
+     background: linear-gradient(135deg, #FF6347 0%, #FF0000 100%);
+     transform: scale(1.1);
+     transition: transform 0.3s ease-in-out;
+   }
+   .hero-title {
+     font-family: 'Bangers', cursive;
+     color: #FF0000;
+   }
+   .light-red-bg {
+     background: linear-gradient(135deg, #FF6347 0%, #FF7F7F 100%);
+   }
+   .black-to-blue-bg {
+     background: linear-gradient(135deg, #000000 0%, #009FE3 100%);
+   }
+   .white-to-blue-bg {
+     background: linear-gradient(135deg, #FFFFFF 0%, #009FE3 100%);
+   }
+   .logo-font {
+     font-family: 'Bangers', cursive;
+     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+     background: linear-gradient(135deg, #FF0000, #FF3333);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+   }
+   .dropdown:hover .dropdown-menu {
+     display: block;
+   }
+   .dropdown-menu {
+     display: none;
+     position: absolute;
+     background-color: rgba(255, 255, 255, 0.9);
+     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+     border-radius: 8px;
+     z-index: 1;
+   }
+   .dropdown-menu a {
+     color: black;
+     padding: 12px 16px;
+     text-decoration: none;
+     display: block;
+     transition: background-color 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+   }
+   .dropdown-menu a:hover {
+     background-color: #f0f0f0;
+     border-radius: 12px;
+   }
+   .rainbow-icon {
+     background: linear-gradient(
+       135deg,
+       #FF218C 0%,    /* Pink */
+       #FF69B4 15%,   /* Helleres Pink */
+       #FF0000 30%,   /* Rot */
+       #FF8C00 45%,   /* Orange */
+       #FFFF00 60%,   /* Gelb */
+       #00FF00 75%,   /* Grün */
+       #0000FF 90%,   /* Blau */
+       #8A2BE2 100%   /* Violett */
+     );
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     font-size: 1.75rem;
+     filter: brightness(1.2) contrast(1.1);
+     text-shadow: 0 0 3px rgba(255,255,255,0.3);
+   }
+   .meme-card {
+     transition: transform 0.3s ease;
+     cursor: pointer;
+   }
+   .meme-card:hover {
+     transform: translateY(-5px);
+   }
+   @media (max-width: 640px) {
+     .dropdown-menu {
+       right: 0;
+       left: auto;
+     }
+     
+     /* Kleinere Abstände auf Mobile */
+     .space-x-6 > * + * {
+       margin-left: 1rem;
+     }
+     
+     /* Kleinere Icons auf Mobile */
+     .social-icon {
+       font-size: 1.25rem;
+     }
+   }
+   
+   .social-icon {
+     @apply transition-transform duration-300 hover:scale-110;
+   }
+   .glass-card {
+     @apply bg-white/10 backdrop-blur-md rounded-xl shadow-lg hover:shadow-xl transition-all duration-300;
+   }
+   
+   .glass-button {
+     @apply bg-white/10 backdrop-blur-md hover:bg-white/20 transition-all duration-300;
+   }
+   
+   /* Verbesserte Lesbarkeit für Text */
+   .text-shadow {
+     text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+   }
+   
+   /* Anpassung der bestehenden Klassen */
+   .btn-red-gradient {
+     @apply bg-gradient-to-r from-[#FF0000] to-[#FF6347] hover:from-[#FF6347] hover:to-[#FF0000];
+   }
+   
+   .btn-primary {
+     @apply bg-gradient-to-r from-[#009FE3] to-black hover:from-black hover:to-[#009FE3];
+   }
+   
+   .radial-gradient {
+     background: radial-gradient(circle at center, white 0%, #009FE3 100%);
+   }
+
+   /* Für Option 2 der Hero Section */
+   .radial-hero-gradient {
+     background: radial-gradient(circle at center, #009FE3 0%, rgba(0, 159, 227, 0.3) 30%, black 100%);
+   }
+
+   /* Für Option 2 der Token Section */
+   .dynamic-token-gradient {
+     background: 
+       linear-gradient(
+         45deg,
+         black 0%,
+         #009FE3 25%,
+         black 50%,
+         #009FE3 75%,
+         black 100%
+       );
+     background-size: 200% 200%;
+     animation: gradientMove 15s ease infinite;
+   }
+
+   @keyframes gradientMove {
+     0% { background-position: 0% 50%; }
+     50% { background-position: 100% 50%; }
+     100% { background-position: 0% 50%; }
+   }
+
+   .fdv-marketcap, .token-button {
+     display: block;
+   }
+
+   .number-circle {
+     @apply w-12 h-12 rounded-full bg-gradient-to-r from-[#FF0000] to-[#FF6347]
+            flex items-center justify-center text-xl font-bold text-white
+            shadow-lg border-2 border-white/20;
+   }
+
+   .slide-item {
+     @apply absolute w-full transition-all duration-500;
+   }
+
+   .slide-item.active {
+     @apply opacity-100;
+   }
+
+   /* Fix Flash of Unstyled Content */
+   .no-fouc {
+     visibility: hidden;
+   }
+   .fouc-ready {
+     visibility: visible;
+   }
+
+   /* Fix Mobile Layout Issues */
+   @media (max-width: 768px) {
+     .slide-item {
+       flex-direction: column;
+       text-align: center;
+       padding: 1rem;
+     }
+     
+     .number-circle {
+       margin: 0 auto;
+     }
+   }
+
+   /* Fix Safari Flex Gap Issue */
+   @supports not (gap: 1rem) {
+     .flex > * + * {
+       margin-left: 1rem;
+     }
+   }
+
+   /* Fix Slider Animation Performance */
+   .slide-item {
+     will-change: opacity, transform;
+     transform: translateZ(0);
+   }
+  </style>
+ </head>
+ <body class="bg-gray-100">
+  <header class="bg-white text-black py-4">
+   <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center px-4 gap-4 sm:gap-0">
+    <div class="flex items-center gap-3">
+      <img 
+        src="https://drive.google.com/thumbnail?id=1oW0bQe4hm3YQlLoQuCol3B0Nml8PU6c4" 
+        alt="NoAfD.meme Logo" 
+        class="w-10 h-10 rounded-full"
+      />
+      <div class="text-3xl sm:text-4xl font-bold text-red-600 logo-font hover:scale-105 transition-transform duration-300">
+        NoAfD.meme
+      </div>
+      <div class="relative dropdown ml-4">
+        <button class="hover:text-gray-300">
+         <i class="fas fa-globe rainbow-icon"></i>
+        </button>
+        <div class="dropdown-menu">
+          <a href="index_de.html">
+            <img alt="German Flag" class="inline-block w-6 h-4 mr-2" src="https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg"/>
+            DE
+          </a>
+          <a href="index_en.html">
+            <img alt="English Flag" class="inline-block w-6 h-4 mr-2" src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"/>
+            EN
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="flex items-center space-x-6">
+     <a class="hover:text-gray-300 text-xl social-icon" 
+        href="https://x.com/noAfD_Meme" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        aria-label="X (formerly Twitter)">
+      <i class="fa-brands fa-x-twitter"></i>
+     </a>
+     <a class="hover:text-gray-300 text-xl social-icon" 
+        href="https://t.me/+YBBgddbyC0lkN2Qy" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        aria-label="Telegram">
+      <i class="fab fa-telegram"></i>
+     </a>
+     <a class="hover:text-gray-300 text-xl social-icon" 
+        href="https://www.tiktok.com/@noafd.meme?lang=de-DE" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        aria-label="TikTok">
+      <i class="fab fa-tiktok"></i>
+     </a>
+     <a class="hover:text-gray-300 text-xl social-icon" 
+        href="https://www.instagram.com/noafd.meme/" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+     </a>
+     <a class="hover:text-gray-300 text-xl social-icon" 
+        href="https://github.com/noafd-meme" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        aria-label="GitHub">
+      <i class="fab fa-github"></i>
+     </a>
+     <a class="hover:text-gray-300 text-xl social-icon" 
+        href="https://noafd-meme.gitbook.io/noafd.meme" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        aria-label="Gitbook">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.802 17.77a.703.703 0 11-.002 1.406.703.703 0 01.002-1.406m11.024-4.347a.703.703 0 11.001-1.406.703.703 0 01-.001 1.406m0-2.876a2.176 2.176 0 00-2.174 2.174c0 .233.039.465.115.691l-7.181 3.823a2.165 2.165 0 00-1.784-.937c-.829 0-1.584.475-1.95 1.216l-6.451-3.402c-.682-.358-1.192-1.48-1.138-2.502.028-.533.212-.947.493-1.107.178-.1.392-.092.62.027l.042.023c1.71.9 7.304 3.847 7.54 3.956.363.169.565.237 1.185-.057l11.564-6.014c.17-.064.368-.227.368-.474 0-.342-.354-.477-.355-.477-.658-.315-1.669-.788-2.655-1.25-2.108-.987-4.497-2.105-5.546-2.655-.906-.474-1.635-.074-1.765.006l-.252.125C7.78 6.048 1.46 9.178 1.1 9.397.457 9.789.058 10.57.006 11.539c-.08 1.537.703 3.14 1.824 3.727l6.822 3.518a2.175 2.175 0 002.15 1.862 2.177 2.177 0 002.173-2.14l7.514-4.073c.38.298.853.461 1.337.461A2.176 2.176 0 0024 12.72a2.176 2.176 0 00-2.174-2.174"/>
+      </svg>
+     </a>
+    </div>
+   </div>
+  </header>
+  <section class="relative overflow-hidden py-16 bg-black">
+    <div class="absolute inset-0 bg-[#009FE3]/50 backdrop-blur-md"></div>
+    <div class="container mx-auto text-center px-4 relative z-10 text-white">
+      <h1 class="text-5xl font-bold mb-4">Willkommen bei der NoAfD-Meme Party</h1>
+      <p class="text-xl mb-8">Die Macht der Memes für positive Veränderung durch Humor gegen Rechts.</p>
+      <img alt="Meme" class="mx-auto mb-8 rounded-lg shadow-lg" height="400" src="https://i.ibb.co/qgCSMFM/NOAFD.png" alt="NOAFD" width="500"/>
+      <a href="#community" class="btn-red-gradient text-white py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-110">
+        Community beitreten
+      </a>
+    </div>
+  </section>
+  <section class="relative overflow-hidden py-32" id="purpose">
+   <div class="absolute inset-0 bg-gradient-to-r from-[#009FE3] via-white to-[#009FE3] opacity-95"></div>
+   <div class="absolute inset-0 backdrop-blur-2xl"></div>
+   <div class="container mx-auto text-center px-4 relative z-10">
+    <h2 class="text-5xl font-bold mb-8 text-black hero-title">
+     Unser Zweck
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+     <div class="p-8 bg-white/10 backdrop-blur-md rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 meme-card">
+      <i class="fas fa-laugh-beam text-5xl text-red-600 mb-6"></i>
+      <h3 class="text-2xl font-bold mb-4">Die Macht der Memes</h3>
+      <p class="text-lg">
+       Memes sind das Sprachrohr unserer Generation. In einer Zeit, wo Aufmerksamkeit die wichtigste Währung ist, erreichen wir die Herzen und Köpfe der Internet-Generation auf spielerische Weise.
+      </p>
+     </div>
+     
+     <div class="p-8 bg-white/10 backdrop-blur-md rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 meme-card">
+      <i class="fas fa-users text-5xl text-red-600 mb-6"></i>
+      <h3 class="text-2xl font-bold mb-4">Humor statt Hass</h3>
+      <p class="text-lg">
+       $NOAFD ist eine Bewegung gegen spaltende Rhetorik und Populismus. Wir setzen auf Humor und Kreativität, um Menschen zusammenzubringen und auf die echten Herausforderungen unserer Zeit hinzuweisen - gemeinsam sind wir stärker.
+      </p>
+     </div>
+     
+     <div class="p-8 bg-white/10 backdrop-blur-md rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 meme-card">
+      <i class="fas fa-comments text-5xl text-red-600 mb-6"></i>
+      <h3 class="text-2xl font-bold mb-4">Dialog durch Memes</h3>
+      <p class="text-lg">
+       Unsere Memes sind eine Einladung zum Dialog. Sie zeigen politische Absurdität auf und bringen Menschen zum Nachdenken - mit Freude und Selbstironie als Grundlage für eine gesunde Gesellschaft.
+      </p>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="relative overflow-hidden py-16" id="solidarity">
+    <div class="absolute inset-0 bg-gradient-to-r from-[#009FE3] via-white to-[#009FE3] opacity-95"></div>
+    <div class="absolute inset-0 backdrop-blur-2xl"></div>
+    <div class="container mx-auto text-center px-4 relative z-10">
+      <h2 class="text-5xl font-bold mb-8 text-black hero-title">Gemeinsam für Vielfalt</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- LGBTQ+ Card -->
+        <div class="p-8 bg-white/10 backdrop-blur-md rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 meme-card">
+          <div class="text-5xl mb-6">🏳️‍🌈</div>
+          <h3 class="text-2xl font-bold mb-4">LGBTQ+ Community</h3>
+          <p class="text-lg">
+            Wir stehen für eine Gesellschaft, die sexuelle und geschlechtliche Vielfalt als Bereicherung versteht und feiert.
+          </p>
+        </div>
+
+        <!-- Migranten Card -->
+        <div class="p-8 bg-white/10 backdrop-blur-md rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 meme-card">
+          <div class="text-5xl mb-6">🤝</div>
+          <h3 class="text-2xl font-bold mb-4">Migrant*innen</h3>
+          <p class="text-lg">
+            Migration bereichert unsere Kultur. Wir setzen uns für eine offene, diverse Gesellschaft ein.
+          </p>
+        </div>
+
+        <!-- Inklusion Card -->
+        <div class="p-8 bg-white/10 backdrop-blur-md rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 meme-card">
+          <div class="text-5xl mb-6">♿</div>
+          <h3 class="text-2xl font-bold mb-4">Inklusion</h3>
+          <p class="text-lg">
+            Barrieren abbauen, Teilhabe ermöglichen. Für eine Gesellschaft, die niemanden zurücklässt.
+          </p>
+        </div>
+      </div>
+
+      <!-- Solidarity Statement -->
+      <div class="mt-12 max-w-3xl mx-auto">
+        <p class="text-lg mb-6">
+          Unsere Meme-Community steht für eine Gesellschaft der Vielfalt, des Respekts und der gegenseitigen Unterstützung. Wir nutzen Humor als Brücke, um Vorurteile abzubauen und Verständnis zu fördern.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 text-4xl">
+          <span title="LGBTQ+ Pride">🏳️‍🌈</span>
+          <span title="Trans Pride">🏳️‍⚧️</span>
+          <span title="Diversity">✊🏽</span>
+          <span title="Peace">☮️</span>
+          <span title="Accessibility">♿</span>
+          <span title="Unity">🤝</span>
+          <span title="Love">❤️</span>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="mt-12">
+        <a href="#community" class="btn-red-gradient text-white py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-110 inline-flex items-center gap-2">
+          <i class="fas fa-heart"></i>
+          Unterstütze die Bewegung
+        </a>
+      </div>
+    </div>
+  </section>
+  <section id="coin" class="py-20 bg-gradient-to-b from-[#009FE3] via-black to-black">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-8 text-white logo-font" style="color: white !important">$NOAFD Coin</h2>
+      
+      <!-- Coin Info -->
+      <div class="text-center max-w-2xl mx-auto mb-20">
+        <div class="flex justify-center mb-8">
+          <img src="https://i.ibb.co/C9HKZq9/DALL-E-2025-01-07-18-51-08-A-3-D-render-of-a-coin-designed-in-a-comic-style-The-coin-prominently-fea.webp" alt="NoAfD Coin" class="w-100 h-100">
+        </div>
+        <p class="text-lg text-white mb-6">
+          Der $NOAFD Coin ist mehr als nur eine Kryptowährung oder ein Meme Coin - er ist ein Symbol der demokratischen Solidarität.
+        </p>
+      </div>
+
+      <!-- How to Buy Section -->
+      <h2 class="text-4xl font-bold text-center mb-8 text-white logo-font" style="color: white !important">Wie Coin kaufen?</h2>
+      <div class="text-center max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <!-- Step 1 -->
+        <div class="bg-gradient-to-b from-[#009FE3]/30 to-transparent backdrop-blur-md rounded-xl p-6 hover:transform hover:scale-105 transition-all duration-300 border-2 border-[#009FE3]/50 shadow-lg shadow-[#009FE3]/20">
+          <div class="text-4xl text-white mb-4">
+            <span>1</span>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-white">Download NOVA Wallet</h3>
+          <p class="text-white">Lade dir die Nova Wallet aus dem App Store oder die Talisman Browser Extension herunter. Erstelle dir ein Wallet und speichere deine Passphrase sicher.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-gradient-to-b from-[#009FE3]/30 to-transparent backdrop-blur-md rounded-xl p-6 hover:transform hover:scale-105 transition-all duration-300 border-2 border-[#009FE3]/50 shadow-lg shadow-[#009FE3]/20">
+          <div class="text-4xl text-white mb-4">
+            <span>2</span>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-white">Besorge dir DOT</h3>
+          <p class="text-white">Kaufe DOT/USDC im Nova Wallet oder auf einer Exchange deiner Wahl und sende es an dein Polkadot Wallet.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-gradient-to-b from-[#009FE3]/30 to-transparent backdrop-blur-md rounded-xl p-6 hover:transform hover:scale-105 transition-all duration-300 border-2 border-[#009FE3]/50 shadow-lg shadow-[#009FE3]/20">
+          <div class="text-4xl text-white mb-4">
+            <span>3</span>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-white">Gehe zu Hydration.net</h3>
+          <p class="text-white">Besuche app.hydration.net und verbinde dein Polkadot Wallet. Sende deine DOT/USDC an die Hydration Adresse über Cross-Chain Bridge.</p>
+        </div>
+        
+        <!-- Step 4 -->
+        <div class="bg-gradient-to-b from-[#009FE3]/30 to-transparent backdrop-blur-md rounded-xl p-6 hover:transform hover:scale-105 transition-all duration-300 border-2 border-[#009FE3]/50 shadow-lg shadow-[#009FE3]/20">
+          <div class="text-4xl text-white mb-4">
+            <span>4</span>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-white">Kaufe $NOAFD</h3>
+          <p class="text-white">Tausche deine DOT gegen $NOAFD Coins.</p>
+        </div>
+      </div>
+
+      <!-- Buy Button -->
+      <div class="text-center">
+        <a href="https://hydration.net/NOAFD" target="_blank" rel="noopener noreferrer" class="btn-red-gradient text-white py-3 px-8 rounded-full text-lg inline-block text-center hover:shadow-xl transition duration-300 transform hover:scale-105">
+          Coin kaufen
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="relative overflow-hidden py-32" id="community">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#009FE3] via-[#FF0000] to-[#009FE3] opacity-90"></div>
+    <div class="absolute inset-0 backdrop-blur-3xl"></div>
+    <div class="container mx-auto text-center px-4 relative z-10 text-white">
+      <h2 class="text-5xl font-bold mb-8">Werde Teil der Bewegung</h2>
+      <p class="text-xl mb-12">
+       Tritt unserer Community bei und nutze die Macht der Memes für positive Veränderung!
+      </p>
+      <div class="space-x-4">
+       <a class="hover:text-gray-300 text-4xl" href="https://twitter.com" target="_blank">
+        <i class="fab fa-twitter"></i>
+       </a>
+       <a class="hover:text-gray-300 text-4xl" href="https://tiktok.com" target="_blank">
+        <i class="fab fa-tiktok"></i>
+       </a>
+       <a class="hover:text-gray-300 text-4xl" href="https://instagram.com" target="_blank">
+        <i class="fab fa-instagram"></i>
+       </a>
+       <a class="hover:text-gray-300 text-4xl" href="https://github.com" target="_blank">
+        <i class="fab fa-github"></i>
+       </a>
+       <a class="hover:text-gray-300 text-4xl" href="https://telegram.org" target="_blank">
+        <i class="fab fa-telegram"></i>
+       </a>
+      </div>
+    </div>
+  </section>
+  <footer class="bg-white text-black py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Logo & Info -->
+        <div class="flex flex-col items-center md:items-start">
+          <div class="flex items-center gap-3 mb-4">
+            <img 
+              src="https://drive.google.com/thumbnail?id=1oW0bQe4hm3YQlLoQuCol3B0Nml8PU6c4" 
+              alt="NoAfD.meme Logo" 
+              class="w-10 h-10 rounded-full"
+            />
+            <div class="text-2xl font-bold text-red-600 logo-font">
+              NoAfD.meme
+            </div>
+          </div>
+          <p class="text-gray-600 text-center md:text-left">Eine Meme-Bewegung für mehr Humor statt Hass.</p>
+          <p class="text-gray-600 mt-2">2025 NoAfD.meme</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="text-center md:text-left">
+          <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="#purpose" class="text-gray-600 hover:text-red-600">Unser Zweck</a></li>
+            <li><a href="#solidarity" class="text-gray-600 hover:text-red-600">Solidarität</a></li>
+            <li><a href="#community" class="text-gray-600 hover:text-red-600">Community</a></li>
+          </ul>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="text-center md:text-left">
+          <h3 class="text-xl font-bold mb-4">Disclaimer</h3>
+          <p class="text-gray-600">Diese Website ist eine Meme-Seite und dient ausschließlich der politischen Satire. Alle Inhalte sind als Parodie zu verstehen.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <div class="fixed bottom-4 right-4 bg-white/10 backdrop-blur-md rounded-xl p-4">
+    <!-- Desktop Version -->
+    <div class="hidden md:flex gap-4 items-center">
+      <div class="flex flex-col gap-2">
+        <!-- Price Row -->
+        <div class="flex items-center gap-4">
+          <img src="https://drive.google.com/thumbnail?id=1oW0bQe4hm3YQlLoQuCol3B0Nml8PU6c4" class="w-8 h-8 rounded-full" alt="Coin Logo">
+          <div>
+            <div class="text-sm text-gray-400">$NOAFD Price</div>
+            <div class="text-xl font-bold">TBA</div>
+          </div>
+          <div class="text-green-500 animate-pulse">Coming Soon</div>
+        </div>
+        <!-- FDV Row -->
+        <div class="flex flex-col gap-2 border-t border-white/10 pt-2">
+          <div>
+            <div class="text-sm text-gray-400">FDV Marketcap</div>
+            <div class="text-lg font-bold">TBA</div>
+          </div>
+          <a href="https://hydration.net/NOAFD" target="_blank" rel="noopener noreferrer" class="btn-red-gradient text-white py-2 px-4 rounded-full text-sm inline-block text-center hover:shadow-xl transition duration-300 transform hover:scale-105 w-full">
+            Coin kaufen
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile Version - unverändert -->
+    <div class="md:hidden flex items-center gap-4">
+      <img src="https://drive.google.com/thumbnail?id=1oW0bQe4hm3YQlLoQuCol3B0Nml8PU6c4" class="w-8 h-8 rounded-full" alt="Coin Logo">
+      <div>
+        <div class="text-sm text-gray-400">$NOAFD</div>
+        <div class="text-lg font-bold">TBA</div>
+      </div>
+      <a href="https://hydration.net/NOAFD" target="_blank" rel="noopener noreferrer" class="btn-red-gradient text-white py-2 px-4 rounded-full text-sm inline-block text-center">
+        Coin kaufen
+      </a>
+    </div>
+  </div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.slide-item');
+    const options = {
+      root: null,
+      threshold: 0.7,
+      rootMargin: '0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        } else {
+          entry.target.classList.remove('active');
+        }
+      });
+    }, options);
+
+    slides.forEach(slide => {
+      observer.observe(slide);
+    });
+  });
+  </script>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Debug Image Loading
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+      img.onerror = function() {
+        console.error(`Failed to load image: ${img.src}`);
+        img.src = 'fallback-image.png'; // Fallback image
+      };
+    });
+
+    // Debug Slider
+    const slides = document.querySelectorAll('.slide-item');
+    if (slides.length === 0) {
+      console.error('No slides found');
+    }
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          entry.target.style.opacity = '1';
+        } else {
+          entry.target.classList.remove('active');
+          entry.target.style.opacity = '0';
+        }
+      });
+    }, {
+      threshold: 0.5,
+      rootMargin: '0px'
+    });
+
+    slides.forEach(slide => {
+      observer.observe(slide);
+    });
+
+    // Debug Mobile Menu
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  });
+
+  // Fix Smooth Scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // Fix Token Ticker Position
+  window.addEventListener('resize', () => {
+    const ticker = document.querySelector('.fixed');
+    if (ticker) {
+      if (window.innerWidth < 768) {
+        ticker.style.bottom = '0';
+        ticker.style.right = '0';
+        ticker.style.width = '100%';
+        ticker.style.borderRadius = '12px 12px 0 0';
+      } else {
+        ticker.style.bottom = '1rem';
+        ticker.style.right = '1rem';
+        ticker.style.width = 'auto';
+        ticker.style.borderRadius = '12px';
+      }
+    }
+  });
+
+  // Performance Monitoring
+  let startTime = performance.now();
+  window.addEventListener('load', () => {
+    let loadTime = performance.now() - startTime;
+    console.log(`Page load time: ${loadTime}ms`);
+  });
+  </script>
+ </body>
+</html>

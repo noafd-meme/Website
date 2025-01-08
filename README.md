@@ -1,54 +1,106 @@
-NoAfD.meme - A Politically Conscious Meme Community
-NoAfD.meme is a community-driven platform leveraging the power of memes to promote open and progressive values in Germany. Through humor and creativity, it serves as a medium to counter divisive rhetoric, foster solidarity, and inspire positive change.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="README for NoAfD.meme - A Politically Conscious Meme Community">
+    <title>NoAfD.meme - README</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #f9f9f9; color: #333;">
+    <header style="text-align: center; margin-bottom: 40px;">
+        <h1 style="color: #FF0000;">NoAfD.meme - A Politically Conscious Meme Community</h1>
+        <p>Leveraging the power of memes to promote progressive values in Germany.</p>
+    </header>
 
-Features
-Multilingual Support: English (index_en.html) and German (index_de.html) versions available.
-Community Focus: Encourages dialogue and engagement through memes as a universal language.
-Solidarity and Diversity: Highlights inclusivity with sections for LGBTQ+ rights, migration, and accessibility.
-$NOAFD Coin: A symbol of democratic solidarity and a cryptocurrency initiative tied to the community.
-Dynamic Design: Fully responsive layout with vibrant gradients and animated elements.
-Social Media Integration: Links to platforms like Instagram, Telegram, and TikTok for wider reach.
-Technologies Used
-HTML5 and CSS3
-TailwindCSS for styling
-Font Awesome for icons
-JavaScript for interactivity and animations
-Google Fonts: Roboto, Bangers, and Permanent Marker
-Getting Started
-Prerequisites
-To run the project locally, ensure you have a modern browser that supports HTML5 and CSS3.
+    <section>
+        <h2>Features</h2>
+        <ul>
+            <li><strong>Multilingual Support</strong>: English (<code>index_en.html</code>) and German (<code>index_de.html</code>) versions available.</li>
+            <li><strong>Community Focus</strong>: Encourages dialogue and engagement through memes as a universal language.</li>
+            <li><strong>Solidarity and Diversity</strong>: Highlights inclusivity with sections for LGBTQ+ rights, migration, and accessibility.</li>
+            <li><strong>$NOAFD Coin</strong>: A symbol of democratic solidarity and a cryptocurrency initiative tied to the community.</li>
+            <li><strong>Dynamic Design</strong>: Fully responsive layout with vibrant gradients and animated elements.</li>
+            <li><strong>Social Media Integration</strong>: Links to platforms like Instagram, Telegram, and TikTok for wider reach.</li>
+        </ul>
+    </section>
 
-Installation
-Clone the repository:
-bash
-Code kopieren
-git clone https://github.com/your-username/noafd-meme.git
-Open either index_en.html or index_de.html in your browser.
-Live Demo
-Check out the live version here: NoAfD.meme
+    <section>
+        <h2>Technologies Used</h2>
+        <ul>
+            <li>HTML5 and CSS3</li>
+            <li>TailwindCSS for styling</li>
+            <li>Font Awesome for icons</li>
+            <li>JavaScript for interactivity and animations</li>
+            <li>Google Fonts: <code>Roboto</code>, <code>Bangers</code>, and <code>Permanent Marker</code></li>
+        </ul>
+    </section>
 
-How to Buy $NOAFD Coin
-Download a Polkadot-Compatible Wallet:
-Nova Wallet (App Store)
-Talisman Browser Extension
-Acquire DOT:
-Purchase DOT on an exchange or directly in your wallet.
-Connect Wallet:
-Visit Hydration.net and link your wallet.
-Exchange for $NOAFD:
-Swap your DOT for $NOAFD coins.
-Contributing
-We welcome contributions! Whether you're a developer, designer, or meme enthusiast, feel free to fork the repo and create pull requests.
+    <section>
+        <h2>Getting Started</h2>
+        <h3>Prerequisites</h3>
+        <p>To run the project locally, ensure you have a modern browser that supports HTML5 and CSS3.</p>
 
-Reporting Issues
-If you encounter bugs or have suggestions, please open an issue in the repository.
+        <h3>Installation</h3>
+        <ol>
+            <li>Clone the repository:
+                <pre><code>git clone https://github.com/your-username/noafd-meme.git</code></pre>
+            </li>
+            <li>Open either <code>index_en.html</code> or <code>index_de.html</code> in your browser.</li>
+        </ol>
 
-License
-This project is licensed under the MIT License. See the LICENSE file for more details.
+        <h3>Live Demo</h3>
+        <p>Check out the live version here: <a href="https://your-live-demo-link.com" target="_blank">NoAfD.meme</a></p>
+    </section>
 
-Community Links
-Twitter
-Telegram
-TikTok
-Instagram
-GitBook Documentation
+    <section>
+        <h2>How to Buy $NOAFD Coin</h2>
+        <ol>
+            <li><strong>Download a Polkadot-Compatible Wallet</strong>:
+                <ul>
+                    <li>Nova Wallet (App Store)</li>
+                    <li>Talisman Browser Extension</li>
+                </ul>
+            </li>
+            <li><strong>Acquire DOT</strong>:
+                <ul>
+                    <li>Purchase DOT on an exchange or directly in your wallet.</li>
+                </ul>
+            </li>
+            <li><strong>Connect Wallet</strong>:
+                <ul>
+                    <li>Visit <a href="https://hydration.net/NOAFD" target="_blank">Hydration.net</a> and link your wallet.</li>
+                </ul>
+            </li>
+            <li><strong>Exchange for $NOAFD</strong>:
+                <ul>
+                    <li>Swap your DOT for $NOAFD coins.</li>
+                </ul>
+            </li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Contributing</h2>
+        <p>We welcome contributions! Whether you're a developer, designer, or meme enthusiast, feel free to fork the repo and create pull requests.</p>
+
+        <h3>Reporting Issues</h3>
+        <p>If you encounter bugs or have suggestions, please open an issue in the repository.</p>
+    </section>
+
+    <section>
+        <h2>License</h2>
+        <p>This project is licensed under the MIT License. See the <code>LICENSE</code> file for more details.</p>
+    </section>
+
+    <section>
+        <h2>Community Links</h2>
+        <ul>
+            <li><a href="https://x.com/noAfD_Meme" target="_blank">Twitter</a></li>
+            <li><a href="https://t.me/+YBBgddbyC0lkN2Qy" target="_blank">Telegram</a></li>
+            <li><a href="https://www.tiktok.com/@noafd.meme" target="_blank">TikTok</a></li>
+            <li><a href="https://www.instagram.com/noafd.meme/" target="_blank">Instagram</a></li>
+            <li><a href="https://noafd-meme.gitbook.io/noafd.meme" target="_blank">GitBook Documentation</a></li>
+        </ul>
+    </section>
+</body>
+</html>
